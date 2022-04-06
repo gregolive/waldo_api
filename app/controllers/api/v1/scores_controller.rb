@@ -16,7 +16,7 @@ class Api::V1::ScoresController < ApplicationController
     @score = Score.new(score_params)
 
     if @score.save
-      render json: @score, status: :created, location: api_v3_scores_path(@score)
+      render json: @score, status: :created, location: api_v1_scores_path(@score)
     else
       render json: @score.errors, status: :unprocessable_entity
     end
