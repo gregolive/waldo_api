@@ -11,7 +11,6 @@ class Api::V1::ScoresController < ApplicationController
     render json: @score
   end
 
-  # POST /scores
   def create
     @score = Score.new(score_params)
 

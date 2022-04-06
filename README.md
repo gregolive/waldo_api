@@ -1,24 +1,11 @@
-# README
+# Where's Waldo API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The backend portion of my Where's Waldo project made with React and Ruby on Rails. For a detailed description see the frontend repo below.
 
-Things you may want to cover:
+[Live demo](https://gregolive.github.io/waldo/) 👈 
 
-* Ruby version
+[Frontend repo](https://github.com/gregolive/waldo) 🔗
 
-* System dependencies
+## Ruby version
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+2.7.4
