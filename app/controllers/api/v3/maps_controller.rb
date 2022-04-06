@@ -1,4 +1,4 @@
-class Api::V2::MapsController < ApplicationController
+class Api::V3::MapsController < ApplicationController
   before_action :set_map, only: [:show, :update, :destroy]
 
   # GET /maps

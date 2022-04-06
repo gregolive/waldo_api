@@ -1,4 +1,4 @@
-class ScoresController < ApplicationController
+class Api::V3::ScoresController < ApplicationController
   before_action :set_score, only: [:show, :update, :destroy]
 
   # GET /scores
@@ -15,10 +15,10 @@ class ScoresController < ApplicationController
 
   # POST /scores
   def create
-    @score = Score.new(score_params)
+    @score = Score.new(score_create_params)
 
     if @score.save
-      render json: @score, status: :created, location: @score
+      render json: @score, status: :created, location: api_v3_scores_path(@score)
     else
       render json: @score.errors, status: :unprocessable_entity
     end
@@ -41,11 +41,15 @@ class ScoresController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_score
-      @score = Score.find(params[:id])
+      @score = Score.where map_id: params[:map_id]
     end
 
     # Only allow a list of trusted parameters through.
     def score_params
       params.require(:score).permit(:name, :time, :map_id)
+    end
+
+    def score_create_params
+      params.permit(:name, :time, :map_id)
     end
 end
